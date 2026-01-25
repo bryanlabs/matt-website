@@ -240,98 +240,46 @@
             font-size: 0.95rem;
         }
 
-        .instagram {
+        .showcase {
             padding: 6rem 2rem;
             background: var(--gradient);
             text-align: center;
         }
 
-        .instagram .section-title {
+        .showcase .section-title {
             color: var(--white);
         }
 
-        .instagram p {
+        .showcase > p {
             color: var(--light);
             max-width: 600px;
             margin: 0 auto 2rem;
             font-size: 1.1rem;
         }
 
-        .instagram-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            background: var(--white);
-            color: var(--primary);
-            padding: 1.5rem 3rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .instagram-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .instagram-link svg {
-            width: 32px;
-            height: 32px;
-        }
-
         .video-grid {
-            max-width: 1000px;
-            margin: 3rem auto 0;
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
         .video-card {
-            aspect-ratio: 9/16;
             border-radius: 15px;
             overflow: hidden;
-            position: relative;
-            cursor: pointer;
+            background: rgba(0,0,0,0.3);
             transition: transform 0.3s ease;
         }
 
         .video-card:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
-        .video-card img {
+        .video-card video {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .video-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-
-        .video-card:hover .video-overlay {
-            background: linear-gradient(to top, rgba(13,110,110,0.8) 0%, rgba(13,110,110,0.4) 50%, rgba(13,110,110,0.2) 100%);
-        }
-
-        .video-overlay .play-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+            height: auto;
+            display: block;
         }
 
         .documents {
@@ -460,7 +408,7 @@
             <p class="subtitle">Physical Therapist Assistant</p>
             <p class="tagline">Combining military discipline, elite athletic training, and clinical expertise to help patients achieve their highest potential.</p>
             <div class="cta-buttons">
-                <a href="#instagram" class="btn btn-primary">Watch My Training</a>
+                <a href="#showcase" class="btn btn-primary">Watch My Training</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
@@ -531,45 +479,45 @@
         </div>
     </section>
 
-    <section class="instagram" id="instagram">
+    <section class="showcase" id="showcase">
         <h2 class="section-title">See What I Can Do</h2>
-        <p>I practice what I preach. Check out my Instagram to see strength training, mobility work, and physical feats that demonstrate my commitment to peak human performance.</p>
-
-        <a href="https://www.instagram.com/mattbryan_fitness" target="_blank" class="instagram-link">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            @mattbryan_fitness
-        </a>
+        <p>I practice what I preach. Here's a sample of my strength training, mobility work, and physical feats that demonstrate my commitment to peak human performance.</p>
 
         <div class="video-grid">
             <div class="video-card">
-                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c149a?w=400&h=600&fit=crop" alt="Strength Training">
-                <div class="video-overlay">
-                    <span class="play-icon">▶️</span>
-                    <span>Strength Training</span>
-                </div>
+                <video controls preload="metadata">
+                    <source src="instagram_CDuOsmwhvRV.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="video-card">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=600&fit=crop" alt="Mobility Work">
-                <div class="video-overlay">
-                    <span class="play-icon">▶️</span>
-                    <span>Mobility Work</span>
-                </div>
+                <video controls preload="metadata">
+                    <source src="instagram_CDPsu4nnEO_.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="video-card">
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=600&fit=crop" alt="Athletic Feats">
-                <div class="video-overlay">
-                    <span class="play-icon">▶️</span>
-                    <span>Athletic Feats</span>
-                </div>
+                <video controls preload="metadata">
+                    <source src="instagram_CDFlgG0H2sS.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="video-card">
-                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=600&fit=crop" alt="Training Tips">
-                <div class="video-overlay">
-                    <span class="play-icon">▶️</span>
-                    <span>Training Tips</span>
-                </div>
+                <video controls preload="metadata">
+                    <source src="instagram_B_8X4Zanql4.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="instagram_Byl2K5iByZm.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="instagram_Bz__PN4HR8a.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="instagram_Bz_p2B4HA7t.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
@@ -604,9 +552,6 @@
             </div>
             <div class="contact-item">
                 ✉️ <a href="mailto:matiosbryan@hotmail.com">matiosbryan@hotmail.com</a>
-            </div>
-            <div class="contact-item">
-                📸 <a href="https://www.instagram.com/mattbryan_fitness" target="_blank">@mattbryan_fitness</a>
             </div>
         </div>
     </section>
