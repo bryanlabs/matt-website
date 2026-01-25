@@ -8,7 +8,10 @@ LABEL org.opencontainers.image.title="matt-website"
 LABEL org.opencontainers.image.vendor="bryanlabs"
 
 # Copy the static website to nginx's default serve directory
-COPY index.html /usr/share/nginx/html/
+COPY --chmod=644 index.html /usr/share/nginx/html/
+COPY --chmod=644 headshot.jpg /usr/share/nginx/html/
+COPY --chmod=644 resume.html /usr/share/nginx/html/
+COPY --chmod=644 cover-letter.html /usr/share/nginx/html/
 
 # Expose port 80
 EXPOSE 80

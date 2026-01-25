@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Letter - Matt Bryan, PTA | NeuroWerks Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0D6E6E;
+            --secondary: #14919B;
+            --accent: #1A3A3A;
+            --light: #E8F4F4;
+            --dark: #2C3E50;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+            padding: 2rem;
+        }
+
+        .letter {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 2rem 2.5rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 0.3rem;
+        }
+
+        .header .title {
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .contact-row a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .date {
+            text-align: right;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .recipient {
+            margin-bottom: 2rem;
+        }
+
+        .recipient strong {
+            color: var(--primary);
+        }
+
+        .salutation {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .body p {
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .body p:first-of-type::first-letter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            float: left;
+            line-height: 1;
+            padding-right: 0.5rem;
+            padding-top: 0.1rem;
+        }
+
+        .closing {
+            margin-top: 2rem;
+        }
+
+        .closing .regards {
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .closing .signature {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .closing .credential {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--light);
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .company-badge {
+            display: inline-block;
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .letter {
+                box-shadow: none;
+            }
+            .back-link, .print-btn {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-row {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+    <div class="letter">
+        <div class="header">
+            <h1>MATTHEW BRYAN</h1>
+            <div class="title">Licensed Physical Therapist Assistant</div>
+            <div class="contact-row">
+                <span>📍 Bonita Springs, FL</span>
+                <a href="tel:2403837980">📱 (240) 383-7980</a>
+                <a href="mailto:matiosbryan@hotmail.com">✉ matiosbryan@hotmail.com</a>
+                <a href="https://mattbfit.net">🌐 mattbfit.net</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="date">January 2026</div>
+
+            <div class="recipient">
+                <span class="company-badge">Application for NeuroWerks</span><br>
+                <strong>NeuroWerks Team</strong><br>
+                Bonita Springs, Florida
+            </div>
+
+            <div class="salutation">Dear Ana, Chris, and the NeuroWerks Team,</div>
+
+            <div class="body">
+                <p>When I learned that NeuroWerks combines intensive functional training with therapeutic expertise, and that Chris shares my background as a PTA with deep roots in personal training, I knew I had to reach out. Your mission is something I've lived: as a Marine Corps Black Belt and Water Survival School graduate, 16+ year personal trainer and gymnastics coach, and now a PTA with over a decade of clinical experience specializing in neurological cases.</p>
+
+                <p>Your commitment to the TheraSuit Method and intensive program structure mirrors exactly how I believe rehabilitation should work. I'm already your neighbor here in Bonita Springs and ready to contribute immediately. You can see my training philosophy in action at <a href="https://mattbfit.net" style="color: var(--primary);">mattbfit.net</a>.</p>
+
+                <p>Thank you for considering my application. I look forward to meeting you.</p>
+            </div>
+
+            <div class="closing">
+                <div class="regards">With enthusiasm and respect,</div>
+                <div class="signature">Matthew Bryan</div>
+                <div class="credential">PTA, Licensed Physical Therapist Assistant</div>
+            </div>
+
+            <div class="footer">
+                📎 <a href="resume.html">View Resume</a> &nbsp;•&nbsp;
+                🎥 <a href="index.html#instagram">Training Videos</a> &nbsp;•&nbsp;
+                📸 <a href="https://instagram.com/mattbryan_fitness" target="_blank">@mattbryan_fitness</a>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+</body>
+</html>
