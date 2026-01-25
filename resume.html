@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Matt Bryan, PTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0D6E6E;
+            --secondary: #14919B;
+            --accent: #1A3A3A;
+            --light: #E8F4F4;
+            --dark: #2C3E50;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .resume {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .title {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-row a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .content {
+            padding: 2rem 2.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem 2rem;
+        }
+
+        .skill-item {
+            font-size: 0.9rem;
+            padding: 0.3rem 0;
+        }
+
+        .skill-item::before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .job {
+            margin-bottom: 1.5rem;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-title {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .job-company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-bullets li {
+            font-size: 0.9rem;
+            padding: 0.2rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .job-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .cert-item {
+            font-size: 0.9rem;
+            padding: 0.3rem 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .resume {
+                box-shadow: none;
+            }
+            .back-link, .print-btn {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .two-column, .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+    <div class="resume">
+        <div class="header">
+            <h1>MATTHEW BRYAN</h1>
+            <div class="title">Licensed Physical Therapist Assistant</div>
+            <div class="contact-row">
+                <span>📍 Bonita Springs, FL</span>
+                <a href="tel:2403837980">📱 (240) 383-7980</a>
+                <a href="mailto:matiosbryan@hotmail.com">✉ matiosbryan@hotmail.com</a>
+                <a href="https://mattbfit.net">🌐 mattbfit.net</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div class="section-title">Key Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-item">Neurological Rehabilitation</div>
+                    <div class="skill-item">Patient Motivation & Education</div>
+                    <div class="skill-item">Elite Functional Training</div>
+                    <div class="skill-item">Spanish: B1 (Intermediate)</div>
+                    <div class="skill-item">Exercise Progression, Modification, and Diversification</div>
+                    <div class="skill-item">EMR: Systems 4PT, TheraOffice</div>
+                    <div class="skill-item">Pediatric & Adult Populations</div>
+                    <div class="skill-item">Vigorous Physical Conditioning</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Professional Experience</div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Physical Therapist Assistant</span> |
+                            <span class="job-company">IslandFit Physical Therapy & Wellness, Bonita Springs, FL</span>
+                        </div>
+                        <span class="job-date">2016 – Present</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Deliver comprehensive outpatient physical therapy services to diverse patient populations, including neurological, orthopedic, and geriatric cases</li>
+                        <li>Design and implement individualized exercise programs focused on functional outcomes and measurable progress</li>
+                        <li>Collaborate with supervising PT to optimize treatment plans, achieving 95%+ patient satisfaction scores</li>
+                        <li>Specialize in intensive therapeutic exercise protocols for patients with complex neuromuscular conditions</li>
+                        <li>Mentor new staff on advanced therapeutic techniques and patient communication strategies</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Physical Therapist Assistant</span> |
+                            <span class="job-company">Affinity Sports & Rehab, Naples, FL</span>
+                        </div>
+                        <span class="job-date">2014 – 2016</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Provided sports rehabilitation and injury prevention services to athletes of all levels</li>
+                        <li>Implemented evidence-based treatment protocols for post-surgical orthopedic patients</li>
+                        <li>Developed sport-specific conditioning programs integrating therapeutic exercise with performance training</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Clinical Intern</span> |
+                            <span class="job-company">ManorCare Skilled Nursing Facility</span>
+                        </div>
+                        <span class="job-date">March – May 2014</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Completed intensive clinical rotation focusing on geriatric rehabilitation and post-acute care</li>
+                        <li>Gained hands-on experience with complex neurological cases including stroke and TBI recovery</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">Personal Trainer & Gymnastics Coach</span> |
+                            <span class="job-company">MNCPPC Fairland Recreation Center, MD</span>
+                        </div>
+                        <span class="job-date">2001 – 2023</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>16+ years experience designing progressive strength and conditioning programs for all ages</li>
+                        <li>Coached competitive gymnasts, developing expertise in motor learning and movement analysis</li>
+                        <li>Built strong foundation in exercise physiology and biomechanics applied to therapeutic settings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Military Service</div>
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">United States Marine Corps</span> |
+                            <span class="job-company">Active Duty</span>
+                        </div>
+                        <span class="job-date">2003 – 2007; 2008 – 2009</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Marine Corps Martial Arts Program (MCMAP) Black Belt – demonstrated exceptional physical prowess and discipline</li>
+                        <li>Water Survival School Advanced Level certified – elite training in extreme physical conditions</li>
+                        <li>Developed leadership, teamwork, and the ability to remain composed under pressure</li>
+                        <li>Maintained peak physical conditioning standards throughout service</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education & Certifications</div>
+                <div class="two-column">
+                    <div>
+                        <strong>Education</strong>
+                        <div class="cert-item">A.A.S. Physical Therapist Assistant<br>Montgomery College, MD – 2014</div>
+                        <div class="cert-item" style="margin-top: 1rem;"><strong>Specialized Training</strong></div>
+                        <div class="cert-item">ICE MMOA Certified<br>(Modern Management of the Older Adult)</div>
+                    </div>
+                    <div>
+                        <strong>Current Certifications</strong>
+                        <div class="cert-item">Florida PTA License (Active)</div>
+                        <div class="cert-item">CPR/BLS Certified (2026)</div>
+                        <div class="cert-item">NSPA Personal Trainer (2007-2023)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+</body>
+</html>
