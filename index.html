@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Bryan, PTA | Physical Therapist Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0D6E6E;
+            --secondary: #14919B;
+            --accent: #1A3A3A;
+            --light: #E8F4F4;
+            --dark: #2C3E50;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #0D6E6E 0%, #14919B 50%, #1A3A3A 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>') repeat;
+            background-size: 100px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: var(--light);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--white);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .stats {
+            background: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0.5rem;
+        }
+
+        .about {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .credentials {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .credentials-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .credential-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .credential-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .credential-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .credential-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .credential-card p {
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .instagram {
+            padding: 6rem 2rem;
+            background: var(--gradient);
+            text-align: center;
+        }
+
+        .instagram .section-title {
+            color: var(--white);
+        }
+
+        .instagram p {
+            color: var(--light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--white);
+            color: var(--primary);
+            padding: 1.5rem 3rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .instagram-link svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .video-grid {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .video-placeholder {
+            aspect-ratio: 9/16;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.9rem;
+            padding: 1rem;
+            border: 2px dashed rgba(255,255,255,0.3);
+        }
+
+        .video-placeholder .play-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.7;
+        }
+
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--accent);
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--light);
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--white);
+        }
+
+        footer {
+            background: #111;
+            color: var(--light);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Matt Bryan</h1>
+            <p class="subtitle">Physical Therapist Assistant</p>
+            <p class="tagline">Combining military discipline, elite athletic training, and clinical expertise to help patients achieve their highest potential.</p>
+            <div class="cta-buttons">
+                <a href="#instagram" class="btn btn-primary">Watch My Training</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Years Clinical Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">16+</div>
+                <div class="stat-label">Years Personal Training</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Years USMC Service</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Passion for Rehab</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-content">
+            <h2 class="section-title">More Than Just a PTA</h2>
+            <p>I believe that true rehabilitation requires more than clinical knowledge—it demands an understanding of what the human body can truly achieve. My journey from Marine Corps combat training to gymnastics coaching to physical therapy has taught me that <strong>limits are meant to be pushed</strong>, and every patient has untapped potential waiting to be unlocked.</p>
+            <p>Whether working with neurological patients, post-surgical athletes, or anyone seeking to reclaim their mobility, I bring the same intensity and dedication that earned me a MCMAP Black Belt and advanced water survival certification. I don't just treat patients—I partner with them on their journey to peak function.</p>
+        </div>
+    </section>
+
+    <section class="credentials">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Credentials & Training</h2>
+        <div class="credentials-grid">
+            <div class="credential-card">
+                <div class="credential-icon">🎓</div>
+                <h3>Licensed PTA</h3>
+                <p>Florida Licensed Physical Therapist Assistant with 10+ years outpatient experience</p>
+            </div>
+            <div class="credential-card">
+                <div class="credential-icon">🎖️</div>
+                <h3>Marine Corps Veteran</h3>
+                <p>MCMAP Black Belt & Advanced Water Survival School Graduate</p>
+            </div>
+            <div class="credential-card">
+                <div class="credential-icon">💪</div>
+                <h3>Elite Trainer</h3>
+                <p>16+ years certified personal trainer & gymnastics coach</p>
+            </div>
+            <div class="credential-card">
+                <div class="credential-icon">❤️</div>
+                <h3>CPR/BLS Certified</h3>
+                <p>American Red Cross certified - 2026</p>
+            </div>
+            <div class="credential-card">
+                <div class="credential-icon">👴</div>
+                <h3>MMOA Certified</h3>
+                <p>ICE Modern Management of the Older Adult specialist</p>
+            </div>
+            <div class="credential-card">
+                <div class="credential-icon">🗣️</div>
+                <h3>Bilingual</h3>
+                <p>Conversational Spanish for diverse patient communication</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="instagram" id="instagram">
+        <h2 class="section-title">See What I Can Do</h2>
+        <p>I practice what I preach. Check out my Instagram to see strength training, mobility work, and physical feats that demonstrate my commitment to peak human performance.</p>
+
+        <a href="https://www.instagram.com/mattbryan_fitness" target="_blank" class="instagram-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            @mattbryan_fitness
+        </a>
+
+        <div class="video-grid">
+            <div class="video-placeholder">
+                <span class="play-icon">▶️</span>
+                <span>Strength Training</span>
+            </div>
+            <div class="video-placeholder">
+                <span class="play-icon">▶️</span>
+                <span>Mobility Work</span>
+            </div>
+            <div class="video-placeholder">
+                <span class="play-icon">▶️</span>
+                <span>Athletic Feats</span>
+            </div>
+            <div class="video-placeholder">
+                <span class="play-icon">▶️</span>
+                <span>Training Tips</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                📍 <span>Bonita Springs, Florida</span>
+            </div>
+            <div class="contact-item">
+                📱 <a href="tel:2403837980">(240) 383-7980</a>
+            </div>
+            <div class="contact-item">
+                ✉️ <a href="mailto:matiosbryan@hotmail.com">matiosbryan@hotmail.com</a>
+            </div>
+            <div class="contact-item">
+                📸 <a href="https://www.instagram.com/mattbryan_fitness" target="_blank">@mattbryan_fitness</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Matt Bryan, PTA. Ready to help you move better.</p>
+    </footer>
+</body>
+</html>
