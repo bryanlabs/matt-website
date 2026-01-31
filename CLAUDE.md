@@ -75,10 +75,14 @@ gh api /repos/bryanlabs/matt-website/pages
 |------|---------|
 | `index.html` | Main portfolio page |
 | `resume.html` | Professional resume |
+| `resume.docx` | Styled Word export (auto-generated from resume.html) |
+| `neuroworks.html` | Hidden cover letter page |
 | `headshot.jpg` | Profile photo |
 | `instagram_*.mp4` | Training showcase videos |
 | `CNAME` | Custom domain configuration |
 | `Dockerfile` | Container build (for alternative deployment) |
+| `scripts/build-resume-docx.py` | Converts resume.html to styled DOCX using python-docx |
+| `.github/workflows/convert-resume.yml` | Auto-regenerates resume.docx on push |
 
 ---
 

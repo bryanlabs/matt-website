@@ -13,6 +13,7 @@ COPY --chmod=644 headshot.jpg /usr/share/nginx/html/
 COPY --chmod=644 resume.html /usr/share/nginx/html/
 COPY --chmod=644 resume.doc[x] /usr/share/nginx/html/
 COPY --chmod=644 neuroworks.html /usr/share/nginx/html/
+COPY --chmod=644 neuroworks.doc[x] /usr/share/nginx/html/
 COPY --chmod=644 instagram_*.mp4 /usr/share/nginx/html/
 
 # Expose port 80

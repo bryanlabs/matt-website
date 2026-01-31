@@ -1,4 +1,4 @@
-name: Convert Resume to DOCX
+name: Convert HTML to DOCX
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'resume.html'
+      - 'neuroworks.html'
 
 jobs:
   convert:
@@ -25,13 +26,16 @@ jobs:
       - name: Install dependencies
         run: pip install python-docx beautifulsoup4 lxml
 
-      - name: Convert HTML to DOCX
+      - name: Convert resume to DOCX
         run: python scripts/build-resume-docx.py
 
-      - name: Commit DOCX if changed
+      - name: Convert cover letter to DOCX
+        run: python scripts/build-coverletter-docx.py
+
+      - name: Commit DOCX files if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add resume.docx
-          git diff --cached --quiet || git commit -m "[skip ci] Update resume.docx from resume.html"
+          git add resume.docx neuroworks.docx
+          git diff --cached --quiet || git commit -m "[skip ci] Update DOCX files from HTML sources"
           git push
